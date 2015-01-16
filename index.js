@@ -5,51 +5,43 @@
 /**
  * Module dependencies
  */
-var Resource    = require('deployd/lib/resource'),
-    md5         = require('MD5'),
-    util        = require('util'),
-    path        = require('path');
-
-console.log(md5('message'));
+var Resource       = require('deployd/lib/resource'),
+    util           = require('util'),
+    md5            = require('MD5');
 
 /**
- * Module setup
+ * Module setup.
  */
-
-function Md5(){
+function Md5(name, options) {
 
     Resource.apply( this, arguments );
+    this.md5 = md5;
 
 }
-
 util.inherits( Md5, Resource );
-
+Md5.label = "MD5";
 Md5.prototype.clientGeneration = true;
 
+
 /**
- * Module methodes
+ * Module methods
  */
+Md5.prototype.handle = function (ctx, next) {
+    var req = ctx.req, domain = {url: ctx.url, query:ctx.query};
 
-Md5.prototype.handle = function ( ctx, next ) {
+    if (!this.md5) return ctx.done({statusCode:400,message:'Bad request'});
 
-    if ( ctx.req && ctx.req.method !== 'POST' ) {
-        return next();
+    if(!ctx.req.internal) return ctx.done({ statusCode: 403, message: 'Forbidden' });
+
+    if (req.method === "GET") {
+        var encrypted = this.md5(domain.query.string);
+        ctx.done( null, encrypted);
+    }else{
+        next();
     }
-
-    if ( !ctx.req.internal && this.config.internalOnly ) {
-        return ctx.done({ statusCode: 403, message: 'Forbidden' });
-    }
-
-    var options = ctx.body || {};
-    console.log('Options');
-    console.log(options);
-
-    return ctx.done({ statusCode: 400, errors: errors });
-
 };
 
 /**
  * Module export
  */
-
-module.exports = md5;
+module.exports = Md5;
