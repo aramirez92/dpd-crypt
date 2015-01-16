@@ -4,7 +4,7 @@ This custom resource type allows you allows md5 encryption.
 
 ## Installation
 
-`$ npm install dpd-email`
+`$ npm install dpd-crypt`
 
 See [Installing Modules](http://docs.deployd.com/docs/using-modules/) for details.
 
