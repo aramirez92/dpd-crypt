@@ -3,18 +3,12 @@
     "name": "Alfredo Ramirez Ortega"
   },
   "name": "dpd-crypt",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "This custom resource type allows md5 encryption.",
   "repository": {
     "url": "git://github.com/aramirez/dpd-crypt.git"
   },
-  "engines": {
-    "node": ">= 0.10.0"
-  },
-  "main": "index",
-  "bin": {
-    "dpd": "./bin/dpd"
-  },
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,5 +19,9 @@
   "homepage": "https://github.com/aramirez92/dpd-crypt",
   "dependencies": {
     "MD5": "^1.2.1"
-  }
+  },
+  "readme": "# dpd-crypt\n\nThis custom resource type allows you allows md5 encryption.\n\n## Installation\n\n`$ npm install dpd-crypt`\n\nSee [Installing Modules](http://docs.deployd.com/docs/using-modules/) for details.\n\n## Example Usage\n\n```\n\ndpd.md5.get({\n    string: 'Text to encode'\n}, function (results) {\n    // ...\n});\n\n```\n\n## Follow me on Twitter\n\n[@devOps92](https://twitter.com/devOps92)",
+  "_id": "dpd-crypt@0.0.4",
+  "_shasum": "8bccf5046edc22522ac4938e202d42de9e978d08",
+  "_from": "dpd-crypt@"
 }
