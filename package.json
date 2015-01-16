@@ -1,0 +1,19 @@
+{
+  "name": "dpd-crypt",
+  "version": "0.0.1",
+  "description": "This custom resource type allows md5 encryption.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aramirez92/dpd-crypt"
+  },
+  "author": "Alfredo Ramirez Ortega",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aramirez92/dpd-crypt/issues"
+  },
+  "homepage": "https://github.com/aramirez92/dpd-crypt"
+}
