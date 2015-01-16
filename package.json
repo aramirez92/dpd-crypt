@@ -3,7 +3,7 @@
     "name": "Alfredo Ramirez Ortega"
   },
   "name": "dpd-crypt",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This custom resource type allows md5 encryption.",
   "repository": {
     "url": "git://github.com/aramirez/dpd-crypt.git"
