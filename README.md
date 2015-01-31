@@ -12,8 +12,9 @@ See [Installing Modules](http://docs.deployd.com/docs/using-modules/) for detail
 
 ```
 
-dpd.md5.get({
-    string: 'Text to encode'
+dpd.crypt.get({
+    string: 'Text to encode',
+    method: 'sha1' //By default md5 you don't need specify method
 }, function (results) {
     // ...
 });
